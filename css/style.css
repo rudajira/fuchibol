@@ -1,0 +1,31 @@
+#campo-base{
+    height: 568px;
+    width: 1160px;
+    background-image: url(../img/cancha.webp);
+    background-size: contain;
+    top: 0;
+    left: 0;
+       
+}
+#arcoIzq{
+    position: absolute;
+    height: 308px;
+    width: 250px;
+    top: calc(568px - 308px);
+    left: 10;
+}
+#arcoDer{
+    position: absolute;
+    height: 308px;
+    width: 250px;
+    top: calc(568px - 308px);
+    left: calc(1160px - 260px);
+}
+#balon{
+    position: absolute;
+    height: 64px;
+    width: 64px;
+    top: calc(568px - 64px);
+    left: 256px;
+    cursor: pointer;
+}
