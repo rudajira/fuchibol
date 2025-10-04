@@ -18,8 +18,8 @@ body {
     width: 800px;
     height: 500px;
     background-color: #008000;
-    background-image: url('img/cancha1.png');
-    /*border: 5px solid #fff;*/
+    /*background-image: url('img/cancha1.png');
+    border: 5px solid #fff;*/
     box-sizing: border-box;
     overflow: hidden;
 }
