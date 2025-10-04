@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logoFCB.png" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Penales 2D</title>
+</head>
+<body>
+    <div class="tablero">
+        <div class="cronometro">Tiempo: <span id="tiempo">120</span></div>
+        <div>Jugador 1: <span id="marcador-1">0</span></div>
+        <div>Jugador 2: <span id="marcador-2">0</span></div>
+    </div>
+    <div id="cancha">
+        <div id="campo">
+            <img src="img/cancha1.png">
+        </div>
+        <div id="arco-izq" class="arco"></div>
+        <div id="arco-der" class="arco"></div>
+        <div id="jugador-izq" class="jugador">
+            <img id="cabeza1" class="cabeza" src="img/cabeza1.webp">
+            <img id="guayo1" class="guayo" src="img/guayo1.webp">
+        </div>
+        <div id="jugador-der" class="jugador">
+            <img id="cabeza2" class="cabeza" src="img/cabeza2.webp">
+            <img id="guayo2" class="guayo" src="img/guayo2.webp">
+        </div>
+        <!--<div id="jugador-izq" class="jugador">⚫</div>-->
+        <!--<div id="jugador-der" class="jugador">⚪</div>-->
+        <div id="balon"><img src="img/balon1.webp" style="width: 40px; height: 40px;"></div>
+    </div>
+    <script src="js/fuchibol.js"></script>
+</body>
+
+</html>
