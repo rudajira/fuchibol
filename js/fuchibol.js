@@ -22,7 +22,7 @@ let balonVel = { x: 0, y: 0 };
 const playerSpeed = 5;
 const balonFriction = 0.99;
 const kickStrength = 10;
-
+/*
 if (window.top === window.self) {
     // No está en un iframe: oculta todo y muestra un mensaje.
     document.body.innerHTML = '<h1 style="font-family: sans-serif; text-align: center; margin-top: 50px;">Este contenido solo puede ser visto en la página oficial.</h1>';
@@ -31,7 +31,7 @@ if (window.top === window.self) {
     // Sí está en un iframe: muestra el juego.
     document.body.style.visibility = 'visible';
 }
-
+*/
 // Teclas presionadas
 let keys = {};
 document.addEventListener('keydown', (e) => {
