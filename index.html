@@ -1,36 +1,223 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="img/logoFCB.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Selección de Jugadores</title>
+    <link rel="icon" type="image/webp" href="img/logoFCB.png" />
     <link rel="stylesheet" href="css/style.css">
-    <title>Penales 2D</title>
 </head>
+
 <body>
-    <div class="tablero">
-        <div class="cronometro">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tiempo: <span id="tiempo">120</span></div>
-        <div>Jugador 1: <span id="marcador-1">0</span>&nbsp;&nbsp;&nbsp;Jugador 2: <span id="marcador-2">0</span></div>
+    <!-- Pantalla de selección -->
+    <div id="select-screen">
+        <h1>Selecciona tus jugadores</h1>
+        <div class="selection">
+            <div class="player-select">
+                <h2>Jugador 1</h2>
+                <img src="img/cabeza1.webp" id="j1-1" class="jugadorSelect jugador1" data-player="1">
+                <img src="img/cabeza2.webp" id="j1-2" class="jugadorSelect jugador1" data-player="1">
+                <img src="img/cabeza3.webp" id="j1-3" class="jugadorSelect jugador1" data-player="1">
+                <img src="img/cabeza4.webp" id="j1-4" class="jugadorSelect jugador1" data-player="1">
+                <img src="img/cabeza5.webp" id="j1-5" class="jugadorSelect jugador1" data-player="1">
+                <img src="img/cabeza6.webp" id="j1-6" class="jugadorSelect jugador1" data-player="1">
+                <img src="img/cabeza7.webp" id="j1-7" class="jugadorSelect jugador1" data-player="1">
+                <img src="img/cabeza8.webp" id="j1-8" class="jugadorSelect jugador1" data-player="1">
+                <img src="img/cabeza9.webp" id="j1-9" class="jugadorSelect jugador1" data-player="1">
+            </div>
+            <div class="guayo-screen">
+                <h2>Guayo Jug. 1</h2>
+                <img src="img/guayo1.webp" id="guayo1" class="guayo-option jugador1" data-guayo="1">
+                <img src="img/guayo2.webp" id="guayo2" class="guayo-option jugador1" data-guayo="1">
+                <img src="img/guayo3.webp" id="guayo3" class="guayo-option jugador1" data-guayo="1">
+                <img src="img/guayo4.webp" id="guayo4" class="guayo-option jugador1" data-guayo="1">
+                <img src="img/guayo5.webp" id="guayo5" class="guayo-option jugador1" data-guayo="1">
+                <img src="img/guayo6.webp" id="guayo6" class="guayo-option jugador1" data-guayo="1">
+            </div>
+
+            <div class="player-select">
+                <h2>Jugador 2</h2>
+                <img src="img/cabeza1.webp" id="j2-1" class="jugadorSelect jugador2" data-player="2">
+                <img src="img/cabeza2.webp" id="j2-2" class="jugadorSelect jugador2" data-player="2">
+                <img src="img/cabeza3.webp" id="j2-3" class="jugadorSelect jugador2" data-player="2">
+                <img src="img/cabeza4.webp" id="j2-4" class="jugadorSelect jugador2" data-player="2">
+                <img src="img/cabeza5.webp" id="j2-5" class="jugadorSelect jugador2" data-player="2">
+                <img src="img/cabeza6.webp" id="j2-6" class="jugadorSelect jugador2" data-player="2">
+                <img src="img/cabeza7.webp" id="j2-7" class="jugadorSelect jugador2" data-player="2">
+                <img src="img/cabeza8.webp" id="j2-8" class="jugadorSelect jugador2" data-player="2">
+                <img src="img/cabeza9.webp" id="j2-9" class="jugadorSelect jugador2" data-player="2">
+            </div>
+            <div class="guayo-screen">
+                <h2>Guayo Jug. 2</h2>
+                <img src="img/guayo1.webp" id="guayo1" class="guayo-option jugador2" data-guayo="2">
+                <img src="img/guayo2.webp" id="guayo2" class="guayo-option jugador2" data-guayo="2">
+                <img src="img/guayo3.webp" id="guayo3" class="guayo-option jugador2" data-guayo="2">
+                <img src="img/guayo4.webp" id="guayo4" class="guayo-option jugador2" data-guayo="2">
+                <img src="img/guayo5.webp" id="guayo5" class="guayo-option jugador2" data-guayo="2">
+                <img src="img/guayo6.webp" id="guayo6" class="guayo-option jugador2" data-guayo="2">
+            </div>
+
+            <div id="cancha-screen">
+                <h2>Selecciona la cancha</h2>
+                <div class="cancha-options">
+                    <img src="img/cancha1.png" id="cancha1" class="cancha-option" data-cancha="img/cancha1.png">
+                    <img src="img/cancha2.png" id="cancha2" class="cancha-option" data-cancha="img/cancha2.png">
+                </div>
+            </div>
+        </div>
+
+        <button id="startBtn">Iniciar Partido</button>
     </div>
-    <div id="cancha">
-        <div id="campo">
-            <img src="img/cancha1.png">
+    <div id="pantallaSeleccion" class="ocultar">
+        <div class="selection">
+            <div>
+                <h2>Jugador 1</h2>
+                <img id="cabezaSel1" style="width: 80px;" src="#">
+                <br>
+                <img id="guayoSel1" style="width: 80px;" src="#">
+            </div>
+            <div>
+                <h2>Jugador 2</h2>
+                <img id="cabezaSel2" style="width: 80px;" src="#">
+                <div></div>
+                <img id="guayoSel2" style="width: 80px;" src="#">
+            </div>
+            <div>
+                <h2>Cancha</h2>
+                <img id="canchaSel" style="width: 150px;" src="#">
+            </div>
         </div>
-        <div id="arco-izq" class="arco"></div>
-        <div id="arco-der" class="arco"></div>
-        <div id="jugador-izq" class="jugador">
-            <img id="cabeza1" class="cabeza" src="img/cabeza1.webp">
-            <img id="guayo1" class="guayo" src="img/guayo1.webp">
+        <div style="text-align: center;">
+            <button type="button" class="canceltBtn" id="btnCancelarSelect">Cancelar</button>
+            <button type="button" class="startBtn" id="btnAprobarSelect">ir al Juego</button>
         </div>
-        <div id="jugador-der" class="jugador">
-            <img id="cabeza2" class="cabeza" src="img/cabeza2.webp">
-            <img id="guayo2" class="guayo" src="img/guayo2.webp">
-        </div>
-        <!--<div id="jugador-izq" class="jugador">⚫</div>-->
-        <!--<div id="jugador-der" class="jugador">⚪</div>-->
-        <div id="balon"><img src="img/balon1.webp" style="width: 40px; height: 40px;"></div>
     </div>
-    <script src="js/fuchibol.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let selectedJ1 = null;//jugador 1 Seleccionado
+            let selectedJ2 = null;//jugador 2 Seleccionado
+            let selectedGJ1 = null;//guayo jugador 1 Seleccionado
+            let selectedGJ2 = null;//guayo juagador 2 Seleccionado
+            let selectedC = null;//cancha Seleccionada
+
+            // Selección de jugadores 
+            const selectImgs = document.querySelectorAll('.player-select img');
+            selectImgs.forEach(img => {
+                img.addEventListener('click', () => {
+                    const player = img.dataset.player;
+
+                    // Quitar selección previa 
+                    document.querySelectorAll(`.player-select img[data-player="${player}"]`)
+                        .forEach(i => i.classList.remove('selected'));
+
+                    // Marcar imagen seleccionada 
+                    img.classList.add('selected');
+                    //se agrega esta parte del código apra que no afecte la rotación de las cabezas
+                    if (player == "2") {
+                        img.style.transform = 'scaleX(-1) scale(1.06)';
+                    }
+
+                    // Guardar la selección 
+                    const src = img.getAttribute('src');
+                    if (player === "1") {
+                        selectedJ1 = src;
+                    } else {
+                        selectedJ2 = src;
+                    }
+
+                    console.log(`Jugador ${player} seleccionó: ${src}`);
+                });
+            });
+            //Selección Guayo
+            const selectImgsG = document.querySelectorAll('.guayo-screen img');
+            selectImgsG.forEach(img => {
+                img.addEventListener('click', () => {
+                    const guayo = img.dataset.guayo;
+
+                    // Quitar selección previa 
+                    document.querySelectorAll(`.guayo-screen img[data-guayo="${guayo}"]`)
+                        .forEach(i => i.classList.remove('selected'));
+
+                    // Marcar imagen seleccionada 
+                    img.classList.add('selected');
+                    //se agrega esta parte del código apra que no afecte la rotación de las cabezas
+                    if (guayo == "2") {
+                        img.style.transform = 'scaleX(-1) scale(1.06)';
+                    }
+
+                    // Guardar la selección 
+                    const src = img.getAttribute('src');
+                    if (guayo === "1") {
+                        selectedGJ1 = src;
+                    } else {
+                        selectedGJ2 = src;
+                    }
+
+                    console.log(`Jugador ${guayo} seleccionó: ${src}`);
+                });
+            });
+            // Selección de cancha 
+            document.querySelectorAll('.cancha-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    document.querySelectorAll('.cancha-option').forEach(i =>
+                        i.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedCancha = option.dataset.cancha;
+                    console.log(`cancha seleccionada: ${selectedCancha}`);
+                });
+
+            });
+
+            const startBtn = document.getElementById('startBtn');
+
+            startBtn.addEventListener('click', () => {
+                if (!selectedJ1 || !selectedJ2 || !selectedGJ1 || !selectedGJ2 || !selectedCancha) {
+                    alert('Falta seleccionar algún elemento.');
+                    return;
+                }
+
+                // Aquí puedes pasar las selecciones a tu juego 
+                console.log('Selección final:', {
+                    jugador1: selectedJ1,
+                    jugador2: selectedJ2,
+                    GuayoJug1: selectedGJ1,
+                    GuayoJug2: selectedGJ2,
+                    Cancha: selectedCancha,
+                });
+
+                //Se muestra la confirmación de selñección
+                let selectScreen = document.getElementById("pantallaSeleccion");
+
+                document.getElementById("cabezaSel1").src = selectedJ1;
+                document.getElementById("guayoSel1").src = selectedGJ1;
+                document.getElementById("cabezaSel2").src = selectedJ2;
+                document.getElementById("guayoSel2").src = selectedGJ2;
+                document.getElementById("canchaSel").src = selectedCancha;
+
+                document.getElementById("cabezaSel2").style.transform = 'scaleX(-1)';
+                document.getElementById("guayoSel2").style.transform = 'scaleX(-1)';
+
+                selectScreen.classList.remove('ocultar');
+                selectScreen.classList.add('ver');
+
+                // Aquí conectarías tu lógica de físicas y campo 
+            });
+
+            const aprobSelectBtn = document.getElementById('btnAprobarSelect');
+            aprobSelectBtn.addEventListener('click', () => {
+                window.location.href = "fuchibol.html" + "?j1=" + selectedJ1 + "&j2=" + selectedJ2 + "&gj1=" + selectedGJ1 + "&gj2" + selectedGJ2 + "&cancha=" + selectedCancha;
+            });
+
+            const cancelBtn = document.getElementById('btnCancelarSelect');
+            cancelBtn.addEventListener('click', () => {
+                location.reload();
+            });
+
+        });
+    </script>
+
 </body>
 
 </html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penales 2D</title>
+    <link rel="icon" type="image/webp" href="img/logoFCB.png" />
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <a href="index.html">pantalla de seleccion</a>
+    <div id="juegoStart" class="ocultar">
+        <div class="tablero">
+            <div class="cronometro" style="text-align: center;">Tiempo: <span id="tiempo">120</span></div>
+            <div style="text-align: center;">Jugador 1: <span id="marcador-1">0</span>&nbsp;&nbsp;&nbsp;Jugador 2: <span id="marcador-2">0</span>
+            </div>
+        </div>
+        <div id="cancha">
+            <div id="campo">
+                <img id="imgCancha" src="img/cancha1.png">
+            </div>
+            <div id="arco-izq" class="arco"></div>
+            <div id="arco-der" class="arco"></div>
+            <div id="jugador-izq" class="jugador jugador1">
+                <img id="cabeza1" class="cabeza" src="img/cabeza1.webp">
+                <img id="guayo1" class="guayo" src="img/guayo1.webp">
+            </div>
+            <div id="jugador-der" class="jugador jugador2">
+                <img id="cabeza2" class="cabeza" src="img/cabeza2.webp">
+                <img id="guayo2" class="guayo" src="img/guayo2.webp">
+            </div>
+            <div id="balon"><img src="img/balon1.webp" style="width: 40px; height: 40px;"></div>
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const srcJug1 = params.get("j1");//Jugador 1 - izq
+        const srcGJ1 = params.get("gj1");//Guayo Jugador 1
+        const srcJug2 = params.get("j2");//Jugador 2 - Der
+        const srcGJ2 = params.get("gj2");//Guayo Jugador 2
+        const srcCancha = params.get("cancha");//Cancha
+
+        document.getElementById("cabeza1").src = srcJug1;
+        document.getElementById("guayo1").src = srcGJ1;
+        document.getElementById("cabeza2").src = srcJug2;
+        document.getElementById("imgCancha").src = srcGJ2;
+        document.getElementById("imgCancha").src = srcCancha;
+
+        document.getElementById("jugador-izq").removeAttribute("style");
+        document.getElementById("jugador-der").removeAttribute("style");
+        document.getElementById("balon").removeAttribute("style");
+
+        document.getElementById("juegoStart").classList.remove("ocultar");
+        document.getElementById("juegoStart").classList.add("ver");
+    </script>
+    <script src="js/fuchibol.js"></script>
+
+
+</body>
+
+</html>
